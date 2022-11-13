@@ -8,7 +8,6 @@ export const UserRoleSwitch = () => {
   const dispatch = useAppDispatch();
 
   const handleChange = (value: boolean) => {
-    console.log(1);
     dispatch(changeUserRole(value ? UserRoles.admin : UserRoles.manager));
   };
 

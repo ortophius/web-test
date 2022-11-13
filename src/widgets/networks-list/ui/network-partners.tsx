@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   fetchPartnersByNetworkId,
   updatePartner,
@@ -30,10 +30,6 @@ export const NetworkPartners = ({ id }: NetworkPartnersProps) => {
   const partners = usePartnerSelectorByNetworkId(id);
   const dispatch = useAppDispatch();
   const hasAccess = useUserAccess();
-
-  useEffect(() => {
-    console.log(pending);
-  }, [pending]);
 
   const handleUpdatePartner = (payload: UpdatePartnerPayload) => {
     mutatePartner(payload);

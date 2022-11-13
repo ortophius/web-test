@@ -48,7 +48,6 @@ export const partnersSlice = createSlice({
     builder.addCase(
       fetchPartnersByNetworkId.fulfilled,
       (state, { payload }) => {
-        console.log(payload);
         payload.forEach((partner) => {
           state[partner.id] = partner;
         });

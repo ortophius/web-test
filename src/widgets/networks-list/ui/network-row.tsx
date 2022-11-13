@@ -28,7 +28,6 @@ export const NetworkRow = ({
           <div>
             <Button
               onClick={() => {
-                console.log(1);
                 setOpened(!opened);
               }}
             >
