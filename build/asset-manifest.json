@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "https://ortophius.github.io/web-test/build/static/css/main.6fa526b0.css",
+    "main.js": "https://ortophius.github.io/web-test/build/static/js/main.291d750e.js",
+    "static/media/golos-text_black.woff2": "https://ortophius.github.io/web-test/build/static/media/golos-text_black.0edc07b81d93a7efd521.woff2",
+    "static/media/golos-text_demibold.woff2": "https://ortophius.github.io/web-test/build/static/media/golos-text_demibold.df1ca88b09db868af09b.woff2",
+    "static/media/golos-text_medium.woff2": "https://ortophius.github.io/web-test/build/static/media/golos-text_medium.4076af3347fdf5c7ae52.woff2",
+    "static/media/golos-text_bold.woff2": "https://ortophius.github.io/web-test/build/static/media/golos-text_bold.e214a16e8ae6b4697669.woff2",
+    "static/media/golos-text_regular.woff2": "https://ortophius.github.io/web-test/build/static/media/golos-text_regular.ae582e244fd754e381e0.woff2",
+    "static/media/arrow.svg": "https://ortophius.github.io/web-test/build/static/media/arrow.8b5d2290f81205df213f1a21f4cc4665.svg",
+    "index.html": "https://ortophius.github.io/web-test/build/index.html",
+    "static/media/bin.svg": "https://ortophius.github.io/web-test/build/static/media/bin.bff8b28cb29acf2b9febdab56d5b9efc.svg",
+    "static/media/plus.svg": "https://ortophius.github.io/web-test/build/static/media/plus.7254b0cfe27061855e433e3602c8ffa5.svg",
+    "static/media/check.svg": "https://ortophius.github.io/web-test/build/static/media/check.e064e5a5609672a911b8.svg",
+    "static/media/check_grayscale.svg": "https://ortophius.github.io/web-test/build/static/media/check_grayscale.be76d3aa580521c36857.svg",
+    "main.6fa526b0.css.map": "https://ortophius.github.io/web-test/build/static/css/main.6fa526b0.css.map",
+    "main.291d750e.js.map": "https://ortophius.github.io/web-test/build/static/js/main.291d750e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6fa526b0.css",
+    "static/js/main.291d750e.js"
+  ]
+}
