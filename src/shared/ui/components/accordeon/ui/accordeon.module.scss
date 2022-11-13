@@ -1,0 +1,11 @@
+.wrapper {
+  overflow: hidden;
+}
+
+.content {
+  max-height: 0;
+}
+
+.open .content {
+  max-height: none;
+}

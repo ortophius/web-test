@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.switchLabel {
+  background: none;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.slider {
+  display: inline-block;
+  position: relative;
+  width: 2.5rem;
+  height: 1.4rem;
+  border-radius: 1rem;
+  border: 1px solid #a6a6a6;
+  transition: border-color 0.2, color 0.2s;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.1rem;
+    left: 0.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: #a6a6a6;
+    border-radius: 50%;
+    transition: left 0.2s, background-color 0.2s;
+  }
+}
+
+.container:hover .slider {
+  border-color: #fd9a58;
+}
+
+.checkbox:checked + .slider {
+  background-color: #fd9a58;
+  border-color: #fd9a58;
+  &::before {
+    left: 1.2rem;
+    background-color: #fff;
+  }
+}

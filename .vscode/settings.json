@@ -1,0 +1,13 @@
+{
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true,
+      "source.fixAll.prettier": true,
+    },
+    "eslint.validate": [
+      "javascript",
+    ],
+    "stylelint.validate": ["css", "scss"],
+    "editor.tabSize": 2,
+    "eslint.codeActionsOnSave.rules": null,
+}

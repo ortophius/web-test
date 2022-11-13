@@ -1,0 +1,41 @@
+.checkbox {
+  cursor: pointer;
+
+  .input {
+    display: none;
+  }
+}
+
+.checkboxImage {
+  display: inline-block;
+  text-align: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #a6a6a6;
+  transition: border-color 0.2, color 0.2s;
+  overflow: hidden;
+  &:hover {
+    border-color: #fd9a58;
+  }
+}
+
+.input:checked + .checkboxImage {
+  border-color: #fd9a58;
+  &::before {
+    display: block;
+    height: 100%;
+    content: "✓";
+    color: #fff;
+    background-color: #fd9a58;
+  }
+}
+
+.input:disabled + .checkboxImage {
+  background-color: #ededed;
+  border-color: #a6a6a6;
+  &::before {
+    background-color: #a6a6a6;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["unused-imports"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "unused-imports/no-unused-imports": "error"
+  }
+}
