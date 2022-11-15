@@ -7,35 +7,54 @@
 }
 
 .checkboxImage {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   text-align: center;
   width: 1.4rem;
   height: 1.4rem;
   background: white;
   border-radius: 4px;
-  border: 1px solid #a6a6a6;
+  border: 2px solid #A4A5A6;
   transition: border-color 0.2, color 0.2s;
   overflow: hidden;
+
   &:hover {
     border-color: #fd9a58;
+  }
+  &::before {
+    content: "";
+    height: 2px;
+    width: 60%;
+    border-radius: 4px;
+    background-color: #A4A5A6;
+    color: #fff;
   }
 }
 
 .input:checked + .checkboxImage {
-  border-color: #fd9a58;
+  border-color: #F0623C;
+  background-color: #F0623C;
   &::before {
     display: block;
     height: 100%;
-    content: "✓";
+    width: 100%;
+    content: "";
+    background-image: url('../../../assets/icons/check.svg');
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
-    background-color: #fd9a58;
+    background-color: transparent;
   }
 }
 
 .input:disabled + .checkboxImage {
   background-color: #ededed;
   border-color: #a6a6a6;
-  &::before {
-    background-color: #a6a6a6;
-  }
+  color: #A4A5A6;
+}
+
+input:checked:disabled +.checkboxImage::before {
+  background-image: url('../../../assets/icons/check_grayscale.svg');
 }

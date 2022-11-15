@@ -5,9 +5,15 @@ import { Network } from "../../../shared/api/@types";
 import { useAppDispatch, useUserAccess } from "../../../shared/lib/hooks";
 import { Accordeon } from "../../../shared/ui/components/accordeon";
 import { Button } from "../../../shared/ui/components/button";
-import { Checkbox } from "../../../shared/ui/components/checkbox";
 import { NetworkPartners } from "./network-partners";
+import { ReactComponent as ArrowIcon } from "../../../shared/assets/icons/arrow.svg";
+import { ReactComponent as BinIcon } from "../../../shared/assets/icons/bin.svg";
+
 import styles from "./networks-list.module.scss";
+import clsx from "clsx";
+import { Switch } from "../../../shared/ui/components/switch";
+
+const a = <ArrowIcon />;
 
 type NetworkRowProps = Network;
 
@@ -23,32 +29,36 @@ export const NetworkRow = ({
 
   return (
     <Accordeon.Wrapper opened={opened}>
-      <Accordeon.Header>
-        <div className={styles.row} role="presentation">
-          <div>
-            <Button
-              onClick={() => {
-                setOpened(!opened);
-              }}
-            >
-              {opened ? "↓" : "↑"}
-            </Button>
-          </div>
-          <div className={styles.cell}>{name}</div>
-          <div className={styles.cell}>
-            {format(new Date(startDate), "dd.MM.yyyy")}
-          </div>
-          <div className={styles.cell}>
-            <Checkbox
-              value={blocked}
-              onChange={() => {
-                dispatch(updateNetwork({ id, blocked: !blocked }));
-              }}
-              disabled={!hasAccess}
-            />
-          </div>
+      <div className={styles.row}>
+        <div>
+          <Button
+            onClick={() => {
+              setOpened(!opened);
+            }}
+            className={styles.expandButton}
+          >
+            <ArrowIcon className={clsx({ [styles.arrowDown]: opened })} />
+          </Button>
         </div>
-      </Accordeon.Header>
+        <div className={styles.cell}>{name}</div>
+        <div className={styles.cell}>
+          {format(new Date(startDate), "dd.MM.yyyy")}
+        </div>
+        <div className={styles.cell}>
+          <Switch
+            value={blocked}
+            onChange={() => {
+              dispatch(updateNetwork({ id, blocked: !blocked }));
+            }}
+            disabled={!hasAccess}
+          />
+        </div>
+        <div>
+          <Button onClick={() => {}} className={styles.binButton}>
+            <BinIcon />
+          </Button>
+        </div>
+      </div>
       <Accordeon.Content>
         <div className={styles.partners}>
           {opened && <NetworkPartners id={id} />}

@@ -14,15 +14,19 @@ export const NetworksList = () => {
 
   return (
     <div className={styles.networks}>
-      <div className={styles.grid}>
-        <div className={clsx(styles.row, styles.gridHeader)}>
+      <div className={clsx(styles.grid, styles.networksGrid)}>
+        <div className={styles.gridHeader}>
           <div></div>
           <div>Наименование сети</div>
           <div>Дата регистрации</div>
           <div>Блокировка</div>
+          <div></div>
         </div>
+
         {pending ? (
-          <LoaderLayout />
+          <div className={styles.fullRow}>
+            <LoaderLayout />
+          </div>
         ) : (
           networks.map((network) => (
             <NetworkRow key={network.id} {...network} />

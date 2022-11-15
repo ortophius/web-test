@@ -1,18 +1,59 @@
+@font-face {
+	font-family: 'Golos';
+	src: 
+		url('../shared/assets/fonts/golos-text_black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Golos';
+	src: 
+		url('../shared/assets/fonts/golos-text_bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Golos';
+	src: 
+		url('../shared/assets/fonts/golos-text_demibold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Golos';
+	src: 
+		url('../shared/assets/fonts/golos-text_medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Golos';
+	src: 
+		url('../shared/assets/fonts/golos-text_regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
 :root {
   @media screen and (max-width: 1440px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 body {
   margin: 0;
-  font-family: "Open Sans", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+  font-family: "Golos", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5e5e5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  box-sizing: border-box;
 }

@@ -3,7 +3,10 @@ import styles from "./switch.module.scss";
 
 type LabelProps = Omit<AllHTMLAttributes<HTMLButtonElement>, "type">;
 
-type SwitchProps = {
+type SwitchProps = Omit<
+  AllHTMLAttributes<HTMLInputElement>,
+  "value" | "onChange"
+> & {
   value: boolean;
   labels?: {
     leftLabel: string;
@@ -18,7 +21,7 @@ const SwitchButton = ({ children, ...rest }: LabelProps) => (
   </button>
 );
 
-export const Switch = ({ labels, onChange, value }: SwitchProps) => {
+export const Switch = ({ labels, onChange, value, ...rest }: SwitchProps) => {
   const checkboxRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -31,6 +34,7 @@ export const Switch = ({ labels, onChange, value }: SwitchProps) => {
       <label className={styles.switch}>
         <input
           type="checkbox"
+          {...rest}
           className={styles.checkbox}
           ref={checkboxRef}
           checked={value}

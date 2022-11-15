@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
-import styles from "./accordeon.module.scss";
+import { useAccordeonContext } from "../lib/accordeon-context";
 
 type ContentProps = {
   children: ReactNode;
 };
 
-export const Content = ({ children }: ContentProps) => (
-  <div className={styles.content}>{children}</div>
-);
+export const Content = ({ children }: ContentProps) => {
+  const opened = useAccordeonContext();
+
+  return opened ? <>{children}</> : null;
+};

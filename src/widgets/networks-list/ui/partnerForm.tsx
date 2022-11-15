@@ -9,7 +9,6 @@ import { useState } from "react";
 import { useAppDispatch } from "../../../shared/lib/hooks";
 import { createPartner } from "../../../entities/partner/model";
 import clsx from "clsx";
-import { PulseLoader } from "react-spinners";
 
 type FormValues = {
   name: string;
@@ -49,20 +48,21 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.row}>
       <div className={clsx(styles.row, styles.partnersForm)}>
-        {savePending && (
-          <div className={styles.loader}>
-            <PulseLoader size={7} color="#439a9a" />
-          </div>
-        )}
+        <div />
         <div>
           <Controller
             control={control}
             name="name"
             rules={{ required: true }}
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <TextInput error={!!error} value={value} onChange={onChange} />
+              <TextInput
+                error={!!error}
+                value={value}
+                onChange={onChange}
+                disabled={savePending}
+              />
             )}
           />
         </div>
@@ -76,6 +76,7 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
                 options={Object.values(Segments)}
                 value={value}
                 onChange={onChange}
+                disabled={savePending}
               />
             )}
           />
@@ -85,7 +86,11 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
             control={control}
             name="approved"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <Checkbox value={value} onChange={onChange} />
+              <Checkbox
+                value={value}
+                onChange={onChange}
+                disabled={savePending}
+              />
             )}
           />
         </div>
@@ -94,7 +99,11 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
             control={control}
             name="accredited"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <Checkbox value={value} onChange={onChange} />
+              <Checkbox
+                value={value}
+                onChange={onChange}
+                disabled={savePending}
+              />
             )}
           />
         </div>
@@ -104,7 +113,11 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
             name="startDate"
             rules={{ required: true }}
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <DateInput value={value} onChange={onChange} />
+              <DateInput
+                value={value}
+                onChange={onChange}
+                disabled={savePending}
+              />
             )}
           />
         </div>
@@ -113,7 +126,11 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
             control={control}
             name="blocked"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <Checkbox value={value} onChange={onChange} />
+              <Checkbox
+                value={value}
+                onChange={onChange}
+                disabled={savePending}
+              />
             )}
           />
         </div>
@@ -127,10 +144,19 @@ export const PartnerForm = ({ networkId }: PartnerFormProps) => {
                 field: { onChange, value },
                 fieldState: { error },
               }) => (
-                <TextInput error={!!error} value={value} onChange={onChange} />
+                <TextInput
+                  error={!!error}
+                  value={value}
+                  onChange={onChange}
+                  disabled={savePending}
+                />
               )}
             />
-            <input className={styles.submit} type="submit" value="✓" />
+            <input
+              className={styles.submit}
+              type="submit"
+              value="Добавить"
+            ></input>
           </div>
         </div>
       </div>
